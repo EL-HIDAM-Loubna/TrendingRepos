@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Repos } from '../../models/Repos';
 import { ReposService }  from '../../services/repos.service'
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-list-repos',
