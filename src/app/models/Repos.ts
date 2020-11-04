@@ -5,6 +5,6 @@ export class Repos{
     Owner_avatar:string;
     Nbr_stars:number;
     Nbr_issues:number;
-    Time_interval:number;
+    Time_interval:string;
     Owner_name:string
 }
