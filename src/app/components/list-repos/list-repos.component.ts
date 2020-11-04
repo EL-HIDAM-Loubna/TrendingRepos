@@ -22,7 +22,7 @@ export class ListReposComponent implements OnInit {
           Owner_avatar:repos.items[i].owner.avatar_url,
           Nbr_stars:repos.items[i].stargazers_count,
           Nbr_issues:repos.items[i].open_issues_count,
-          Time_interval:30,
+          Time_interval:moment(repos.items[i].created_at + "-07:00", "YYYY-MM-DD").fromNow(),
           Owner_name:repos.items[i].owner.login
         })
       }

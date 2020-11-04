@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Repos } from '../models/Repos';
 import { Observable } from 'rxjs';
+import * as moment from 'moment';
+import {formatDate} from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReposService {
-  reposUrl:string = 'https://api.github.com/search/repositories?q=created:%3E2020-10-04&sort=stars&order=desc';
+  date = formatDate(moment().subtract(30,'day').calendar(),"yyyy-MM-dd",'en');
+  reposUrl:string = 'https://api.github.com/search/repositories?q=created:%3E'+this.date+'&sort=stars&order=desc';
   constructor(private http:HttpClient) { }
   getRepos():Observable<any>{
      return this.http.get<any>(this.reposUrl);
