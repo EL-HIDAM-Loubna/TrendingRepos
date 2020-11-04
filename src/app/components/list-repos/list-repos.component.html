@@ -1,18 +1,3 @@
-<ul class="list-unstyled">
-  <li class="media my-4" *ngFor="let repo of repos">
-     <img src="{{ repo.Owner_avatar }}" class="mr-3" width="140px" alt="...">
-    <div class="media-body ">
-      <h5 class="mt-0 mb-1">{{ repo.Repository_name }}</h5>
-     <p> {{ repo.Repository_description }}</p>
-     <div>
-         <button type="button" class="btn btn-secondary col-lg-2 mr-4">
-            Stars <span class="badge badge-info">{{ repo.Nbr_stars }}</span>
-        </button>
-        <button type="button" class="btn btn-secondary  col-lg-2 mr-3">
-            Issues <span class="badge badge-info">{{ repo.Nbr_issues }}</span>
-        </button>
-        <span class="col-lg-6">submitted {{ repo.Time_interval }}} days ago by {{repo.Owner_name }}</span>
-     </div>
-    </div>
-  </li>
-  </ul>
+ <app-item-repos   *ngFor="let repo of repos" [repo]="repo">
+
+ </app-item-repos>
