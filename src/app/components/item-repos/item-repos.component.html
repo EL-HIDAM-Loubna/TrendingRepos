@@ -6,9 +6,11 @@
        <p> {{ repo.Repository_description }}</p>
        <div>
            <button type="button" class="btn btn-secondary col-lg-2 mr-4">
+              <i class="fa fa-star" aria-hidden="true"> </i>
               Stars <span class="badge badge-info">{{ repo.Nbr_stars }}</span>
           </button>
           <button type="button" class="btn btn-secondary  col-lg-2 mr-3">
+            <i class="fa fa-exclamation-circle" aria-hidden="true"> </i>
               Issues <span class="badge badge-info">{{ repo.Nbr_issues }}</span>
           </button>
           <span class="col-lg-6">submitted {{ repo.Time_interval }} by {{repo.Owner_name }}</span>
