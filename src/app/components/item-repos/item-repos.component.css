@@ -12,3 +12,6 @@ div>span{
     font-size: .9em;
     font-style: italic;
 }
+img{
+    box-shadow: 2px 2px 0px #aaa;
+}
