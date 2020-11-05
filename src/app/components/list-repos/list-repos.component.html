@@ -1,3 +1,14 @@
- <app-item-repos   *ngFor="let repo of repos" [repo]="repo">
+<div>
+<div class="text-center"   id="spinner">
+        <div class="spinner-border text-info" style="width: 5rem; height: 5rem;"
+           role="status"> 
+            <span class="sr-only">Loading...</span> 
+        </div> 
+</div>
+ <app-item-repos   *ngFor="let repo of repos | paginate:{itemsPerPage: 30, currentPage:p ,  totalItems:1000}"  [repo]="repo">
 
  </app-item-repos>
+ <div id="pagination">
+    <pagination-controls (pageChange)="pageChanged($event)" styleClass="ui-paginator-bottom"></pagination-controls>
+</div> 
+</div>

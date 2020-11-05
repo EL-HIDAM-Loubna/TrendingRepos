@@ -11,7 +11,7 @@ export class ReposService {
   date = formatDate(moment().subtract(30,'day').calendar(),"yyyy-MM-dd",'en');
   reposUrl:string = 'https://api.github.com/search/repositories?q=created:%3E'+this.date+'&sort=stars&order=desc';
   constructor(private http:HttpClient) { }
-  getRepos():Observable<any>{
-     return this.http.get<any>(this.reposUrl);
+  getRepos(page:number = 1):Observable<any>{
+     return this.http.get<any>(this.reposUrl+'&page='+page);
   }
 }
