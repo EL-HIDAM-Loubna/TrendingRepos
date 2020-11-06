@@ -21,7 +21,7 @@ export class ListReposComponent implements OnInit {
       for( let i=0; i< repos.items.length; i++ ){
         this.repos.push({ 
           id:repos.items[i].id,
-          Repository_name:repos.items[i].full_name,
+          Repository_name:repos.items[i].name,
           Repository_description:repos.items[i].description,
           Owner_avatar:repos.items[i].owner.avatar_url,
           Nbr_stars:repos.items[i].stargazers_count,
